@@ -8,7 +8,6 @@ jobs:
   build-project:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,6 +26,7 @@ jobs:
   release-project:
     name: Build docker image
     runs-on: ubuntu-latest
+    needs: build-project
     steps:
       #checkout do repositório
       - name: Checkout repository
